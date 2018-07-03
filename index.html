@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Chart JS Test Site</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+</head>
+
+<body>
+<p>Test site for your review. I would like to have a way of loading the data for the MARQUEE tag, P tag, and the data for the Graph. Ideally through a CSV or XLS file that is stored in the same location as the CSS file will be. Thanks.</p>
+<marquee>Ticker tape content here, needs to be fed from an external file.</marquee>
+
+<div id="graph-container">
+  <canvas id="myChart" width="400" height=""></canvas>
+</div>
+<p>Data last updated: 03/07/2018. Also from an external file.</p>
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["2016", "2017", "2018"],
+        datasets: [{
+            label: 'Sales (£m)',
+            data: [12, 19, 17],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+
+
+</body>
+
+</html>
